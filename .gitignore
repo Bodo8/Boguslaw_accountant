@@ -1,0 +1,6 @@
+*.iml
+.idea/
+/target
+/src/test/resources
+*.txt
+*.log
