@@ -33,4 +33,4 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 active:
-  database: memory
+  database: sql
