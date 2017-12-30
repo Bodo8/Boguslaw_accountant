@@ -17,10 +17,8 @@ import java.util.stream.Collectors;
 @ConditionalOnProperty(name = {"active.database"}, havingValue = "memory")
 public class InMemoryDatabase implements Database {
 
-  private final List<Invoice> invoices = new ArrayList<>();
-
   private static AtomicInteger atomicInteger = new AtomicInteger(1);
-
+  private final List<Invoice> invoices = new ArrayList<>();
 
   public Integer getNextInvoiceId() {
     return atomicInteger.getAndIncrement();

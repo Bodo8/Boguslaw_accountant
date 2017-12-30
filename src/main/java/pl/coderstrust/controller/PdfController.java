@@ -19,11 +19,12 @@ import java.io.IOException;
 @RequestMapping("/reportPdf")
 public class PdfController {
 
-  private final InvoiceBookService service;
+  private final PdfService pdfService;
 
-  public PdfController(InvoiceBookService service) {
-    this.service = service;
+  public PdfController(PdfService pdfService) {
+    this.pdfService = pdfService;
   }
+
 
   /**
    * @param year given year witch invoices come
@@ -39,6 +40,6 @@ public class PdfController {
       @QueryParam("year") Integer year,
       @ApiParam(value = "Month  when the invoice was issued")
       @QueryParam("month") String month) throws IOException {
-    service.generateListInvoicesToPdfReport(year, month);
+    pdfService.generateListInvoicesToPdfReport(year, month);
   }
 }
