@@ -15,10 +15,7 @@ import java.io.Serializable;
 @Table(name = "address")
 public class Address implements Serializable {
 
-  @Id
-  @Column(name = "address_id")
   @JsonIgnore
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   @ApiModelProperty(required = true, example = "60325")
   private String zipCode;
@@ -39,6 +36,9 @@ public class Address implements Serializable {
   public Address() {
   }
 
+  @Id
+  @Column(name = "address_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   public int getId() {
     return id;
   }
@@ -47,16 +47,13 @@ public class Address implements Serializable {
     return zipCode;
   }
 
-
   public String getTownName() {
     return townName;
   }
 
-
   public String getStreetName() {
     return streetName;
   }
-
 
   public String getHouseNumber() {
     return houseNumber;

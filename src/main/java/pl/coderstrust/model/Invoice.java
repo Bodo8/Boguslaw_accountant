@@ -23,15 +23,11 @@ import java.util.List;
 @Table(name = "invoice")
 public class Invoice implements Comparable<Invoice>, Serializable {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "invoice_id")
+
   private int id;
   @ApiModelProperty(required = true, example = "2017-08-27")
   private LocalDate date = LocalDate.now();
-  @ManyToOne(cascade = CascadeType.ALL)
   private Counterparty counterparty;
-  @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
   private List<InvoiceItem> invoiceItems;
 
 
@@ -62,6 +58,9 @@ public class Invoice implements Comparable<Invoice>, Serializable {
     this.invoiceItems = itemList;
   }
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "invoice_id")
   public int getId() {
     return id;
   }
@@ -70,6 +69,7 @@ public class Invoice implements Comparable<Invoice>, Serializable {
     return date;
   }
 
+  @ManyToOne(cascade = CascadeType.ALL)
   public Counterparty getCounterparty() {
     return counterparty;
   }
@@ -86,10 +86,14 @@ public class Invoice implements Comparable<Invoice>, Serializable {
     this.counterparty = counterparty;
   }
 
+  @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
   public List<InvoiceItem> getInvoiceItems() {
     return invoiceItems;
   }
 
+  public void setInvoiceItems(List<InvoiceItem> invoiceItems) {
+    this.invoiceItems = invoiceItems;
+  }
 
   @Override
   public boolean equals(Object obj) {

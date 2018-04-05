@@ -1,6 +1,7 @@
 package pl.coderstrust.controller;
 
 import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
 import pl.coderstrust.database.impl.InvoiceProcessor;
 import pl.coderstrust.model.Invoice;
 import pl.coderstrust.model.InvoiceBook;
@@ -11,6 +12,7 @@ import java.time.Month;
 import java.time.Year;
 import java.util.List;
 
+@Service
 public class PdfService {
 
   @Resource

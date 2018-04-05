@@ -36,7 +36,6 @@ public class SwaggerConfiguration {
     return new ApiInfoBuilder()
         .title("Smart Personal Accountant")
         .description("Application to keep your invoices and taxes organized.")
-        .contact("hello@coderstrust.pl")
         .license("SmartTax License Version 1.0")
         .version("1.0")
         .build();

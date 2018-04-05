@@ -36,7 +36,6 @@ public class ReportPdfProcessorTest {
   @Before
   public void setUp() {
     initMocks(this);
-
   }
 
   @Test

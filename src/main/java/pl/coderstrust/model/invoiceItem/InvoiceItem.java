@@ -22,9 +22,7 @@ import java.math.BigDecimal;
 @Table(name = "item")
 public class InvoiceItem implements Serializable {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "item_id")
+
   @JsonIgnore
   private int id;
   @ApiModelProperty(required = true, example = "Fuel top-up")
@@ -35,14 +33,8 @@ public class InvoiceItem implements Serializable {
   private BigDecimal amount;
   @ApiModelProperty(required = true, example = "3.02")
   private BigDecimal vatAmount;
-  @JoinColumn(name = "vat", referencedColumnName = "vat_code")
-  @Enumerated(EnumType.ORDINAL)
   @ApiModelProperty(required = true, example = "VAT_23")
   private Vat vat;
-  @ManyToOne(cascade = {CascadeType.DETACH,
-      CascadeType.MERGE, CascadeType.PERSIST,
-      CascadeType.REFRESH})
-  @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
   @JsonIgnore
   private Invoice invoice;
 
@@ -58,6 +50,20 @@ public class InvoiceItem implements Serializable {
   public InvoiceItem() {
   }
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "item_id")
+  public int getId() {
+    return id;
+  }
+
+  @ManyToOne(cascade = {CascadeType.DETACH,
+      CascadeType.MERGE, CascadeType.PERSIST,
+      CascadeType.REFRESH})
+  @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
+  public Invoice getInvoice() {
+    return invoice;
+  }
 
   public String getDescription() {
     return description;
@@ -75,6 +81,8 @@ public class InvoiceItem implements Serializable {
     return numberOfItems;
   }
 
+  @JoinColumn(name = "vat", referencedColumnName = "vat_code")
+  @Enumerated(EnumType.ORDINAL)
   public Vat getVat() {
     return vat;
   }
@@ -102,6 +110,11 @@ public class InvoiceItem implements Serializable {
   public void setVat(Vat vat) {
     this.vat = vat;
   }
+
+  public void setInvoice(Invoice invoice) {
+    this.invoice = invoice;
+  }
+
 
   @Override
   public String toString() {

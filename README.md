@@ -8,7 +8,7 @@ username: root
 password: admin
 
 You can test the application in the link browser:
-http: // localhost: 8080 / swagger-ui.html # / invoices
+http://localhost:8080/swagger-ui.html#/invoices
 
 Application - accountancy system. Our basic version of the system allowed
 to add (delete, modify and list) invoices, calculate income and VAT taxes. System

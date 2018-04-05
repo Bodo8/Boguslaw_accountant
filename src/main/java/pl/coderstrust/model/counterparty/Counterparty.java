@@ -21,13 +21,9 @@ import java.util.List;
 @Table(name = "counterparty")
 public class Counterparty implements Serializable {
 
-  @Id
-  @Column(name = "counterparty_id")
   @JsonIgnore
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   @ApiModelProperty(required = true, example = "1252437")
-  @Column(name = "nip")
   private String nip;
   @ApiModelProperty(required = true, example = "Schell GmbH & Co. KG")
   private String companyName;
@@ -36,12 +32,8 @@ public class Counterparty implements Serializable {
   @ApiModelProperty(required = true, example = "Deutsche Bank AG")
   private String bankName;
   @ApiModelProperty(required = true, example = "1267354800016354")
-  @Column(name = "bank_number")
   private String bankNumber;
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "address_id")
   private Address address;
-  @OneToMany(mappedBy = "counterparty", cascade = CascadeType.ALL)
   @JsonIgnore
   private List<Invoice> invoices;
 
@@ -59,10 +51,14 @@ public class Counterparty implements Serializable {
   public Counterparty() {
   }
 
+  @Id
+  @Column(name = "counterparty_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   public int getId() {
     return id;
   }
 
+  @Column(name = "nip")
   public String getNip() {
     return nip;
   }
@@ -71,15 +67,17 @@ public class Counterparty implements Serializable {
     return companyName;
   }
 
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "address_id")
   public Address getAddress() {
     return address;
   }
-
 
   public String getBankName() {
     return bankName;
   }
 
+  @Column(name = "bank_number")
   public String getBankNumber() {
     return bankNumber;
   }
@@ -88,6 +86,7 @@ public class Counterparty implements Serializable {
     return phoneNumber;
   }
 
+  @OneToMany(mappedBy = "counterparty", cascade = CascadeType.ALL)
   public List<Invoice> getInvoices() {
     return invoices;
   }
