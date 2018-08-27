@@ -1,4 +1,4 @@
-"# Boguslaw_accountant"
+"# accounting-system"
 
 The project currently has a Spring Boot, Swagger, Hibernate, MySQL.
 For correct action of the application, please:
