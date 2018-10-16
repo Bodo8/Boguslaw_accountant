@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import pl.coderstrust.model.Invoice;
+import pl.coderstrust.model.InvoiceBody;
 
 import java.io.IOException;
 import java.util.List;
@@ -95,7 +96,7 @@ public class InvoiceBookController {
 
   /**
    * @param id - id of invoice.
-   * @return - the number and description of exception
+   * @return - the number and description of exception.
    * @throws IOException - when problems deleting invoice.
    */
   @ApiOperation(value = "Delete an invoice of provided id",

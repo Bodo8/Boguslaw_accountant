@@ -2,10 +2,10 @@ package pl.coderstrust.database.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.coderstrust.controller.InvoiceBody;
 import pl.coderstrust.database.Database;
 import pl.coderstrust.fileprocessor.FileProcessor;
 import pl.coderstrust.model.Invoice;
+import pl.coderstrust.model.InvoiceBody;
 import pl.coderstrust.model.InvoiceBuilder;
 
 import java.io.File;

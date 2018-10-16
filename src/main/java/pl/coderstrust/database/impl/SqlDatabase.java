@@ -4,9 +4,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
-import pl.coderstrust.controller.InvoiceBody;
 import pl.coderstrust.database.Database;
 import pl.coderstrust.model.Invoice;
+import pl.coderstrust.model.InvoiceBody;
 import pl.coderstrust.model.InvoiceBuilder;
 import pl.coderstrust.repository.InvoiceRepository;
 

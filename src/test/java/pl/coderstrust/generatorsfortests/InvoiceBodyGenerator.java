@@ -1,6 +1,6 @@
 package pl.coderstrust.generatorsfortests;
 
-import pl.coderstrust.controller.InvoiceBody;
+import pl.coderstrust.model.InvoiceBody;
 import pl.coderstrust.model.counterparty.CounterpartyBuilder;
 import pl.coderstrust.model.invoiceItem.InvoiceItem;
 import pl.coderstrust.model.invoiceItem.Vat;

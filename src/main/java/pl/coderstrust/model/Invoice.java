@@ -35,7 +35,7 @@ public class Invoice implements Comparable<Invoice>, Serializable {
    * Create instance of Invoice class.
    *
    * @param date - date of issuing of the invoice.
-   * @param counterparty - says w  hich counterparty the invoice was issues by.
+   * @param counterparty - says w  which counterparty the invoice was issues by.
    */
   @JsonCreator
   public Invoice(@JsonProperty("id") int id,

@@ -6,7 +6,6 @@ import static pl.coderstrust.dateprocessor.LocalDateProcessor.getLastDayOfMonthI
 import static pl.coderstrust.dateprocessor.LocalDateProcessor.isDateFromGivenPeriod;
 
 import org.springframework.stereotype.Service;
-import pl.coderstrust.controller.InvoiceBody;
 import pl.coderstrust.database.Database;
 import pl.coderstrust.visitor.InvoiceBookCalculator;
 import pl.coderstrust.visitor.InvoiceVisitor;

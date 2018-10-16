@@ -3,9 +3,9 @@ package pl.coderstrust.database.impl;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
-import pl.coderstrust.controller.InvoiceBody;
 import pl.coderstrust.database.Database;
 import pl.coderstrust.model.Invoice;
+import pl.coderstrust.model.InvoiceBody;
 import pl.coderstrust.model.InvoiceBuilder;
 
 import java.util.ArrayList;

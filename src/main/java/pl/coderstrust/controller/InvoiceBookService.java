@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import pl.coderstrust.emailprocessor.EmailSender;
 import pl.coderstrust.model.Invoice;
+import pl.coderstrust.model.InvoiceBody;
 import pl.coderstrust.model.InvoiceBook;
 
 import java.io.IOException;
@@ -42,7 +43,6 @@ public class InvoiceBookService {
    * @param invoiceBody - body of invoice.
    * @return - id of invoice.
    */
-
   public int postInvoice(InvoiceBody invoiceBody) {
     Invoice invoice = invoiceBook.createInvoice(invoiceBody);
     invoiceBook.addInvoice(invoice);
@@ -56,7 +56,6 @@ public class InvoiceBookService {
    * @param invoiceBody - body of invoice.
    * @throws IOException - when no success in reading and saving invoice.
    */
-
   public void putInvoice(Integer id, InvoiceBody invoiceBody)
       throws IOException {
     Iterator<Invoice> iterator = invoiceBook.getInvoices().iterator();
@@ -71,10 +70,9 @@ public class InvoiceBookService {
 
   /**
    * @param id - id of invoice.
-   * @return - the number and description of exception
+   * @return - the number and description of exception.
    * @throws IOException - when problems deleting invoice.
    */
-
   public boolean deleteInvoice(Integer id) throws IOException {
     Iterator<Invoice> iterator = invoiceBook.getInvoices().iterator();
     while (iterator.hasNext()) {

@@ -6,7 +6,6 @@ import static pl.coderstrust.generatorsfortests.InvoiceGeneratorForTests.generat
 import static pl.coderstrust.generatorsfortests.InvoiceGeneratorForTests.generateOneInvoiceWithoutId;
 
 import org.junit.Test;
-import pl.coderstrust.controller.InvoiceBody;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
